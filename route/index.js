@@ -1,10 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const calculatorController = require('../controller/calculatorController');
+const path = require('path');
 
 // Base route for hello world
 router.get('/', (req, res) => {
-    res.send('Hello World!');
+    res.sendFile(path.join(__dirname, '..', 'index.html'));
 });
 
 // Route for /lokesh
