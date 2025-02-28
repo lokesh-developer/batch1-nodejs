@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const calculatorController = require('../controller/calculatorController');
 
 // Base route for hello world
 router.get('/', (req, res) => {
@@ -10,5 +11,8 @@ router.get('/', (req, res) => {
 router.get('/lokesh', (req, res) => {
     res.send('Hello Lokesh!');
 });
+
+// Calculator route
+router.get('/calculate', calculatorController.calculate);
 
 module.exports = router;
