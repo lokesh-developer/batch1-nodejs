@@ -59,3 +59,18 @@ app.use('/', routes);
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
+
+const bcrypt = require('bcrypt');
+
+// Function to generate hash
+const generateHash = async (password) => {
+    const saltRounds = 10;
+    const hashedPassword = await bcrypt.hash(password, saltRounds);
+    return hashedPassword;
+};
+
+// Example usage to generate hash for "12345678"
+(async () => {
+    const hash = await generateHash("12345678");
+    console.log('Hash for password "12345678":', hash);
+})();

@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const calculatorController = require('../controller/calculatorController');
+const authController = require('../controller/authController');
 const path = require('path');
 
 // Base route for hello world
@@ -15,5 +16,8 @@ router.get('/lokesh', (req, res) => {
 
 // Calculator route
 router.get('/calculate', calculatorController.calculate);
+
+// Login route
+router.post('/login', authController.login);
 
 module.exports = router;
